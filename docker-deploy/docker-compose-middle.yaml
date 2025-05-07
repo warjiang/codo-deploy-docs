@@ -2,7 +2,7 @@ version: "3"
 services:
 
   mysql:
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/mysql:8.0
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/mysql:8.0
     restart: always
     user: root
     privileged: true
@@ -25,7 +25,7 @@ services:
 
 
   redis:
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/redis:6.2
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/redis:6.2
     restart: always
     user: root
     privileged: true
@@ -44,7 +44,7 @@ services:
     command: redis-server --requirepass ${DEFAULT_REDIS_PASSWORD} --bind 0.0.0.0 --appendonly yes
 
   rabbitmq:
-    image: rabbitmq:3.11
+    image: ${REGISTRY:-docker.io}/rabbitmq:3.11
     build:
       context: ./rabbitmq
       dockerfile: Dockerfile
@@ -70,7 +70,7 @@ services:
     hostname: rabbitmq-server  # 设置固定的主机名
 
   etcd:
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/etcd:3.5
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/etcd:3.5
     privileged: true
     restart: always
     volumes:

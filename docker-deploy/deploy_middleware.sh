@@ -7,10 +7,8 @@ chmod 775 ./etcd/data
 
 # 拉镜像
 echo "开始拉取中间服务的 Docker 镜像"
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/mysql:8.0
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/redis:6.2
-docker pull --platform=linux/amd64 rabbitmq:3.11
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/etcd:3.5
+docker compose -f docker-compose-middle.yaml pull
+
 
 # 构建中间服务的 Docker 镜像
 echo "开始构建 docker-compose-middle.yaml 中定义的中间服务镜像"
