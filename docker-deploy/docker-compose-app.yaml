@@ -1,7 +1,7 @@
 version: "3"
 services:
   tianmen:
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-gateway:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-gateway:latest
     restart: always
     container_name: gateway
     hostname: gateway
@@ -44,7 +44,7 @@ services:
       - "11000:11000"
 
   web:
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-frontend:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-frontend:latest
     restart: always
     container_name: web
     hostname: web
@@ -61,7 +61,7 @@ services:
 
   codo_mg:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-admin:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-admin:latest
     container_name: codo_mg
     hostname: codo_mg
     networks:
@@ -78,7 +78,7 @@ services:
 
   codo_cmdb:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-cmdb:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-cmdb:latest
     container_name: codo_cmdb
     hostname: codo_cmdb
     networks:
@@ -99,7 +99,7 @@ services:
 
   codo_flow_control_api:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-api:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-flow-api:latest
     env_file:
       - .env
     volumes:
@@ -119,7 +119,7 @@ services:
 
   codo_flow_loop:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-loop:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-flow-loop:latest
     env_file:
       - .env
     environment:
@@ -137,7 +137,7 @@ services:
 
   codo_flow_queue:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-queue:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-flow-queue:latest
     container_name: codo_flow_queue
     env_file:
       - .env
@@ -152,7 +152,7 @@ services:
 
   codo_scheduler:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-task-scheduler:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-flow-task-scheduler:latest
     container_name: codo_task_scheduler
     networks:
       codo:
@@ -169,7 +169,7 @@ services:
 
   codo_exec_task:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-exec-task:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-exec-task:latest
     container_name: codo_exec_task
     env_file:
       - .env
@@ -186,7 +186,7 @@ services:
 
   codo_task_log:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/flow-task-log:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/flow-task-log:latest
     container_name: codo_task_log
     env_file:
       - .env
@@ -201,7 +201,7 @@ services:
 
   codo_agent_log:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/flow-agent-log:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/flow-agent-log:latest
     container_name: codo_agent_log
     env_file:
       - .env
@@ -216,7 +216,7 @@ services:
 
   codo-agent-server:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-agent-server:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-agent-server:latest
     container_name: codo_agent_server
     env_file:
       - .env
@@ -237,7 +237,7 @@ services:
 
   codo-cnmp:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-cnmp:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-cnmp:latest
     container_name: codo_cnmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup
@@ -253,7 +253,7 @@ services:
 
   codo-notice:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-notice:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-notice:latest
     container_name: codo_notice
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup
@@ -269,7 +269,7 @@ services:
 
   codo-k2:
     restart: unless-stopped
-    image: registry.cn-shanghai.aliyuncs.com/ss1917/codo-k2:latest
+    image: ${REGISTRY:-registry.cn-shanghai.aliyuncs.com}/ss1917/codo-k2:latest
     container_name: codo_k2
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup

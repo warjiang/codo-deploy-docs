@@ -2,20 +2,24 @@
 
 echo -e "开始启动应用镜像"
 
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-gateway:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-frontend:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-admin:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-cmdb:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-api:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-loop:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-queue:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-exec-task:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/flow-task-log:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/flow-agent-log:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-agent-server:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-cnmp:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-notice:latest
-docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-k2:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-gateway:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-frontend:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-admin:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-cmdb:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-api:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-loop:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-flow-queue:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-exec-task:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/flow-task-log:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/flow-agent-log:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-agent-server:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-cnmp:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-notice:latest
+# docker pull --platform=linux/amd64 registry.cn-shanghai.aliyuncs.com/ss1917/codo-k2:latest
+
+# missed images 
+# codo-flow-task-scheduler
+docker compose -f docker-compose-app.yaml pull
 
 # 启动应用镜像并等待启动完成
 docker compose -f docker-compose-app.yaml up -d
