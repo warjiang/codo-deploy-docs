@@ -78,6 +78,10 @@ services:
       - ./etcd/data:/bitnami/etcd:rw
     environment:
       - TZ=Asia/Shanghai
+      # - ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379
+      # - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+      # - ETCD_LISTEN_PEER_URLS=http://0.0.0.0:2380
+      # - ETCD_INITIAL_ADVERTISE_PEER_URLS=http://0.0.0.0:2380
       - ALLOW_NONE_AUTHENTICATION=yes
     container_name: etcd
     hostname: etcd

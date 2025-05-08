@@ -11,6 +11,7 @@ services:
     volumes:
       - ./codo-gateway/conf/init_discovery.json:/usr/local/openresty/nginx/conf/init_discovery.json
       - ./codo-gateway/conf/init_routes.json:/usr/local/openresty/nginx/conf/init_routes.json
+      # - ./codo-gateway/conf/app.json:/usr/local/openresty/nginx/conf/app.json:ro
     environment:
       # 环境变量注入配置例子
       - CODO_GATEWAY.appName=codo-gateway
