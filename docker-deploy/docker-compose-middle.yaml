@@ -75,7 +75,7 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./etcd/data:/bitnami/etcd:rw
+      # - ./etcd/data:/bitnami/etcd:rw
     environment:
       - TZ=Asia/Shanghai
       # - ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379
