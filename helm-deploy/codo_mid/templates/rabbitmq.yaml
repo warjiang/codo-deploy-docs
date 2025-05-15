@@ -26,7 +26,7 @@ spec:
     spec:
       initContainers:
         - name: set-permissions
-          image: busybox
+          image: busybox:dev
           command: [ 'sh', '-c', 'chmod -R 777 /bitnami/rabbitmq/mnesia' ]
           volumeMounts:
             - name: rabbitmqdata

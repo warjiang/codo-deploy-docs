@@ -112,12 +112,7 @@ data:
         "weight": 1,
         "status": 1
       },
-      {
-        "service_name": "kerrigan",
-        "upstream": "{{ template "kerrigan.uname" . }}.{{- .Release.Namespace -}}.svc.cluster.local:{{ .Values.kerriganListenPort }}",
-        "weight": 1,
-        "status": 1
-      },
+      
       {
         "service_name": "p",
         "upstream": "{{ template "adminv4.uname" . }}.{{- .Release.Namespace -}}.svc.cluster.local:{{ .Values.adminv4ListenPort }}",
