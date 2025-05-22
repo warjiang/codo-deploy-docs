@@ -478,8 +478,8 @@ noticeConfig:
       enable: true
     # 飞书配置
     fsapp:
-      appId: ""
-      appSecret: ""
+      appId: "cli_a7b047aa737a9013"
+      appSecret: "x3nYIEjORgNaBjl4foz0lyanRqEaYMBd"
 
     # 钉钉通知配置
     ddapp:
